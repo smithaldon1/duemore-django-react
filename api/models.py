@@ -1,6 +1,7 @@
 import uuid
 from django.db import models
 from django.utils import timezone
+from django.contrib.auth.models import AbstractUser
 
 # Priority Rankings
 class Priority(models.TextChoices):
@@ -17,7 +18,6 @@ class Status(models.TextChoices):
     OVERDUE = 'Overdue'
 
 # User Model
-
 
 # Tags Item Model
 class TagItem(models.Model):
@@ -83,6 +83,3 @@ class FilterItem(models.Model):
     date_time_created = models.DateTimeField("Date Added:", auto_now_add=True)
 
 # Timer Item Model
-
-
-# User Model
