@@ -24,6 +24,9 @@ class TagItem(models.Model):
     tag_id = models.UUIDField(default=uuid.uuid4, editable=False, unique=True)
     name = models.CharField("Tag Name:", max_length=100)
 
+    def __str__(self):
+        return self.name
+
 # Inbox Item Model
 class InboxItem(models.Model):
     name = models.CharField("Item Name:", max_length=100)
@@ -31,6 +34,9 @@ class InboxItem(models.Model):
     convert_to_task = models.BooleanField("Convert To Task?:", null=False, default=False)
     date_time_created = models.DateTimeField("Date Added:", auto_now_add=True)
     last_modified = models.DateTimeField("Date Modified:", auto_now=True)
+
+    def __str__(self):
+        return self.name
 
 # Task Item Model
 class SubTaskItem(models.Model):
@@ -46,6 +52,9 @@ class SubTaskItem(models.Model):
     is_completed = models.BooleanField("Is Completed?", null=False, default=False)
     date_time_created = models.DateTimeField("Date Added:", auto_now_add=True)
     last_modified = models.DateTimeField("Date Modified:", auto_now=True)
+
+    def __str__(self):
+        return self.name
     
 class TaskItem(models.Model):
     task_id = models.UUIDField("Task ID:", default=uuid.uuid4, editable=False, unique=True)
@@ -62,6 +71,9 @@ class TaskItem(models.Model):
     date_time_created = models.DateTimeField("Date Added:", auto_now_add=True)
     last_modified = models.DateTimeField("Date Modified:", auto_now=True)
 
+    def __str__(self):
+        return self.name
+
 # Project Item Model
 class ProjectItem(models.Model):
     project_id = models.UUIDField("Project ID:", default=uuid.uuid4, editable=False, unique=True)
@@ -76,11 +88,17 @@ class ProjectItem(models.Model):
     date_time_created = models.DateTimeField("Date Added:", auto_now_add=True)
     last_modified = models.DateTimeField("Date Modified:", auto_now=True)
 
+    def __str__(self):
+        return self.name
+
 # Filter Item Model
 class FilterItem(models.Model):
     filter_id = models.UUIDField("Filter ID:", default=uuid.uuid4, editable=False, unique=True)
     name = models.CharField("Filter Name:", max_length=100)
     date_time_created = models.DateTimeField("Date Added:", auto_now_add=True)
+
+    def __str__(self):
+        return self.name
 
 # Timer Item Model
 
