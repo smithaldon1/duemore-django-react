@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'corsheaders',
 
     'api.apps.ApiConfig',
+    'frontend.apps.FrontendConfig',
     
 ]
 
@@ -52,7 +53,6 @@ MIDDLEWARE = [
 ]
 
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000/'
 ]
 
 ROOT_URLCONF = 'dj_react_DM.urls'

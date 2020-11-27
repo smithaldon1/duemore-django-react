@@ -11,7 +11,9 @@ env/
 # Database
 db.sqlite3
 
+# JavaScript
 **/node_modules
+jsconfig.json
 
 # Static folder
 static/
