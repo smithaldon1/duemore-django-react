@@ -1,42 +1,42 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { render } from 'react-dom';
+import { BrowserRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
+import Features from './Features';
+import Home from './Home';
+import Pricing from './Pricing';
+import TaskList from './TaskList';
 
 
-class App extends Component {
-    state = {
-        tasks: [],
-    };
 
-    async componentDidMount() {
-        try {
-            const res = await fetch('http://127.0.0.1:8000/api/task/');
-            const tasks = await res.json();
-            this.setState({
-                tasks
-            });
-        } catch (e) {
-            console.log(e)
-        }
-    }
-
+export default class App extends React.Component {
     render() {
         return (
-            <div>
-                {this.state.tasks.map(item => (
-                    <div key={item.task_id}>
-                        <h1>{item.name}</h1>
-                        <p>{item.description}</p>
-                        <p>{item.start_date_time}</p>
-                        <p>{item.due_date_time}</p>
-                        <p>{item.priority}</p>
-                    </div>
-                ))}
-            </div>
+            <Router>
+                <div>
+                    <nav>
+                        <ul>
+                            <li><NavLink to="/">Home</NavLink></li>
+                            <li><NavLink to="/features">Features</NavLink></li>
+                            <li><NavLink to="/pricing">Pricing</NavLink></li>
+                            <li><NavLink to="/tasks">Tasks</NavLink></li>
+                        </ul>
+                    </nav>
+                    <Switch>
+                        <Route exact path='/'><Home /></Route>
+                        <Route path='/features'><Features /></Route>
+                        <Route path='/pricing'><Pricing /></Route>
+                        <Route path='/tasks'><TaskList /></Route>
+                    </Switch>
+                </div>
+            </Router>
         );
     }
 }
 
-export default App;
-
 const container = document.getElementById("app");
-render(<App />, container)
+render(
+    <Router>
+        <App />
+    </Router>,
+    container
+);
