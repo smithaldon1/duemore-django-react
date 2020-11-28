@@ -23,7 +23,13 @@
     "webpack-cli": "^4.2.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-regular-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.13",
     "axios": "^0.21.0",
+    "file-loader": "^6.2.0",
     "react-spring": "^8.0.27",
     "styled-components": "^5.2.1"
   }
