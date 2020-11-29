@@ -8,7 +8,7 @@ import Navbar from './navbar/Navbar';
 import Home from './home/Home';
 import Features from './Features';
 import Pricing from './Pricing';
-import { Login } from './Login';
+import { Login } from './login/Login';
 
 import GlobalStyle from '../styles/Global';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
