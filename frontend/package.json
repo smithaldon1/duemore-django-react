@@ -30,6 +30,8 @@
     "@fortawesome/react-fontawesome": "^0.1.13",
     "axios": "^0.21.0",
     "file-loader": "^6.2.0",
+    "react-facebook-login": "^4.1.1",
+    "react-google-login": "^5.1.25",
     "react-spring": "^8.0.27",
     "styled-components": "^5.2.1"
   }

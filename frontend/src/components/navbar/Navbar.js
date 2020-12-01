@@ -9,7 +9,7 @@ import CollapseMenu from './CollapseMenu';
 import Home from '../home/Home';
 import Features from '../Features';
 import Pricing from '../Pricing';
-import { Login } from '../login/Login';
+import Login from '../login/Login';
 
 const Navbar = (props) => {
     const barAnimation = useSpring({
